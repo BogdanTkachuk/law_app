@@ -65,7 +65,7 @@ def make_all(url):
     return data
 
 
-# збір фнформації та фільтрація відповідно до запиту
+# збір інформації та фільтрація відповідно до запиту
 def _filter(search, page_links_list):
     lar = ThreadPool(15).imap_unordered(make_all, page_links_list)
     search_list = []
