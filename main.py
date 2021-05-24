@@ -24,7 +24,7 @@ headers = {
 }
 
 
-# Функція, що отримує веб сторінку та дозвільні атребути
+# Функція, що отримує веб сторінку та дозвільні атрибути
 def get_html(url, params=''):
     r = requests.get(url, headers=headers, params=params)
     return r.text
@@ -65,7 +65,7 @@ def make_all(url):
     return data
 
 
-# збір фнформація та фільтрація відповідно до запиту
+# збір фнформації та фільтрація відповідно до запиту
 def _filter(search, page_links_list):
     lar = ThreadPool(15).imap_unordered(make_all, page_links_list)
     search_list = []
